@@ -38,7 +38,7 @@ class MyHomePage extends StatelessWidget {
         title: Text("My Second App"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
@@ -47,6 +47,34 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text("Chart!"),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child:Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: "Title"
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: "Amount"
+                    ),
+                  ),
+                  TextButton(
+                    child: Text("Add Transaction"),
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all(Colors.blue[0]),
+                    ), 
+                  )
+                ],
+              ),
             ),
           ),
           Column(
@@ -86,7 +114,7 @@ class MyHomePage extends StatelessWidget {
                         ),                        
                       ),
                       Text(
-                        DateFormat.yMMMd().format(tx.date),
+                        DateFormat("dd-MMM-yyyy").format(tx.date),
                         style: TextStyle(
                           color: Colors.grey,
                         ),
