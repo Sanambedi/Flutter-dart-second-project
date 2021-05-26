@@ -22,7 +22,7 @@ class Chart extends StatelessWidget {
       }
 
       return {
-        'Day': DateFormat.E(weekDay),
+        'Day': DateFormat.E().format(weekDay),
         'amount':totalSum
       };
     });
