@@ -26,7 +26,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay).substring(0,1),
         'amount':totalSum
       };
-    }).toList();
+    }).reversed.toList();
   }
   double get totalSpending{
     return groupedTransactionValues.fold(0.0,(sum,item){
